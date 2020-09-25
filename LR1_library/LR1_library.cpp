@@ -182,7 +182,7 @@ vector<Book> read()
 int main()
 {
    
-    
+    setlocale(0);
         string name, author;
         int year_of_publishing, index;
         vector<Book> arr = input();
