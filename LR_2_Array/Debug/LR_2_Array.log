@@ -1,2 +1,3 @@
 ﻿  LR_2_Array.cpp
+C:\Users\DELL\source\repos\OOP_LR\LR_2_Array\LR_2_Array.cpp(216,34): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
   LR_2_Array.vcxproj -> C:\Users\DELL\source\repos\OOP_LR\LR_2_Array\Debug\LR_2_Array.exe

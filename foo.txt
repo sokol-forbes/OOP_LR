@@ -1,0 +1,153 @@
+void FillTickets(vector <Bus_Ticket>& Vec_of_tickets)
+{
+	ofstream fout(FILE_OF_INFO_ABOUT_TICKETS, ios::out); //Открыли файл с данными о продуктах для записи 
+	fout << endl;
+	Bus_Ticket temp;
+	if (Vec_of_tickets.size() == 0)//ПРОВЕРКА НА ПУСТОТУ ФАЙЛА
+	{
+		int kol;
+		std::cout << "Input count of flights for filling base: ";
+		cin >> kol;
+		for (int i = 0; i < kol; i++)
+		{
+			if (i != 0 && i != kol) fout << endl;
+			std::cout << " Enter information: " << endl;
+			std::cout << "Number of flight: ";
+			cin >> temp.flight_number;
+			std::cout << "Type of bus: ";
+			cin >> temp.bus_type;
+			std::cout << "Destination point: ";
+			cin >> temp.destination;
+			std::cout << "Departure date(day.month) ";
+			scanf_s("%d%*c%d", &temp.departure_day, &temp.departure_month);
+			std::cout << "Enter departure time(hours:minutes)" << endl;
+			scanf_s("%d%*c%d", &temp.departure_hour, &temp.departure_min);
+			std::cout << "Arrival date(day.month) ";
+			scanf_s("%d%*c%d", &temp.arrival_day, &temp.arrival_month);
+			std::cout << "Enter arrival time(hours:minutes)" << endl;
+			scanf_s("%d%*c%d", &temp.arrival_hour, &temp.arrival_min);
+
+			while (true) {
+				std::cout << "Bus capacity: ";
+				cin >> temp.buscap;
+				if (temp.buscap < 0) {
+					std::cout << "Bus capacity must be positive! " << endl;
+				}
+				else {
+					break;
+				}
+			}
+
+			while (true)
+			{
+				std::cout << "Quantity of remaining business tickets: ";
+				cin >> temp.businessquantity;
+				if (temp.businessquantity > temp.buscap) {
+					std::cout << "Quantity of remaining business tickets must be less than bus capacity! Try again" << endl;
+				}
+				else if (temp.businessquantity < 0) {
+					std::cout << "Quantity of remaining business tickets mustn't be negative: " << endl;
+				}
+
+				else {
+					break;
+				}
+			}
+
+			while (true)
+			{
+				std::cout << "Cost of business ticket: $";
+				cin >> temp.businesscost;
+				if (temp.businesscost < 0) {
+					std::cout << "Cost of business ticket must be positive!" << endl;
+				}
+				else {
+					break;
+				}
+
+			}
+			while (true)
+			{
+				std::cout << "Quantity of remaining econom tickets:  ";
+				cin >> temp.economquantity;
+				if (temp.economquantity > temp.buscap) {
+					std::cout << "Quantity of remaining econom tickets must be less than bus capacity! Try again " << endl;
+				}
+				else if (temp.economquantity < 0) {
+					std::cout << "Quantity of remaining business tickets mustn't be negative: " << endl;
+				}
+
+				else if (temp.economquantity + temp.businessquantity > temp.buscap) {
+					std::cout << "Sum of quantities mustn't be more than bus capacity! " << endl;
+				}
+
+				else {
+					break;
+				}
+			}
+			while (true)
+			{
+				std::cout << "Cost of econom ticket: $";
+				cin >> temp.economcost;
+				if (temp.economcost < 0) {
+					std::cout << "Cost of econom ticket must be positive!!" << endl;
+				}
+				else {
+					break;
+				}
+
+			}
+
+			Vec_of_tickets.push_back(temp);
+			fout << temp.flight_number << "\t"
+				<< temp.bus_type << "\t"
+				<< temp.destination << "\t"
+				<<temp.departure_day<<"."
+				<< temp.departure_month << "\t"
+				<< temp.departure_hour << ":"
+				<<temp.departure_min<<"\t"
+				<< temp.arrival_day << "\t"
+				<< temp.arrival_month << "\t"
+				<< temp.arrival_hour << ":"
+				<< temp.arrival_min << "\t"		
+				<< temp.buscap << "\t"
+				<< temp.businessquantity << "\t"
+				<< temp.businesscost << "\t"
+				<< temp.economquantity << "\t"
+				<< temp.economcost << "\t";
+
+		}
+		std::cout << "*******************Sucsses input of data!*******************" << endl;
+
+	}
+	else
+	{
+
+		for (int i = 0; i < Vec_of_tickets.size(); i++)
+		{
+			if (i != 0 && i != Vec_of_tickets.size())
+				fout << endl;
+			fout << Vec_of_tickets.at(i).flight_number << "\t"
+				<< Vec_of_tickets.at(i).bus_type << "\t"
+				<< Vec_of_tickets.at(i).destination << "\t"
+
+				<< Vec_of_tickets.at(i).departure_day << "."
+				<< Vec_of_tickets.at(i).departure_month << "\t"
+				<< Vec_of_tickets.at(i).departure_hour << ":"
+				<< Vec_of_tickets.at(i).departure_min << "\t"
+				<< Vec_of_tickets.at(i).arrival_day << "\t"
+				<< Vec_of_tickets.at(i).arrival_month << "\t"
+				<< Vec_of_tickets.at(i).arrival_hour << ":"
+				<< Vec_of_tickets.at(i).arrival_min << "\t"
+
+				<< Vec_of_tickets.at(i).buscap << "\t"
+				<< Vec_of_tickets.at(i).businessquantity << "\t"
+				<< Vec_of_tickets.at(i).businesscost << "\t"
+				<< Vec_of_tickets.at(i).economquantity << "\t"
+				<< Vec_of_tickets.at(i).economcost << "\t";
+		}
+	}
+	fout.close();
+	system("pause");
+	system("cls");
+}

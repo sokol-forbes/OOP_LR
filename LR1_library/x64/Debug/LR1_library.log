@@ -1,5 +1,0 @@
-﻿  LR1_library.cpp
-C:\Users\DELL\source\repos\OOP_LR\LR1_library\LR1_library.cpp(18,15): warning C4101: b: неиспользованная локальная переменная
-C:\Users\DELL\source\repos\OOP_LR\LR1_library\LR1_library.cpp(187,33): warning C4101: index: неиспользованная локальная переменная
-C:\Users\DELL\source\repos\OOP_LR\LR1_library\LR1_library.cpp(187,13): warning C4101: year_of_publishing: неиспользованная локальная переменная
-  LR1_library.vcxproj -> C:\Users\DELL\source\repos\OOP_LR\LR1_library\x64\Debug\LR1_library.exe

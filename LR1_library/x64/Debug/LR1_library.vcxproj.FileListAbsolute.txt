@@ -1,2 +1,0 @@
-C:\Users\DELL\source\repos\OOP_LR\LR1_library\x64\Debug\LR1_library.exe
-C:\Users\DELL\source\repos\OOP_LR\LR1_library\x64\Debug\LR1_library.pdb

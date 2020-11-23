@@ -1,0 +1,2 @@
+C:\Users\DELL\source\repos\OOP_LR\LR_3_String\String\Debug\String.exe
+C:\Users\DELL\source\repos\OOP_LR\LR_3_String\String\Debug\String.pdb

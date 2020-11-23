@@ -1,0 +1,12 @@
+﻿  Transport.cpp
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(21,37): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(22,39): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(93,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(135,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(154,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(204,70): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(206,59): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(207,72): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(208,64): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Transport.cpp(234,31): warning C4018: <: несоответствие типов со знаком и без знака
+  Transport.vcxproj -> C:\Users\DELL\source\repos\OOP_LR\LR_4_\Transport\Debug\Transport.exe
