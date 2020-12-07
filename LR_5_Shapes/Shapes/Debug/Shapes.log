@@ -1,0 +1,21 @@
+﻿  Shapes.cpp
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(218,28): error C2259: "Parallelepiped": невозможно создать экземпляр абстрактного класса
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(101): message : см. объявление "Parallelepiped"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(218,28): message : из-за следующих членов:
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(218,28): message : double Shape::getPerimeter(void): абстрактный
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(13): message : см. объявление "Shape::getPerimeter"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(218,29): error C2259: "Parallelepiped": невозможно создать экземпляр абстрактного класса
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(101): message : см. объявление "Parallelepiped"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(218,29): message : из-за следующих членов:
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(218,29): message : double Shape::getPerimeter(void): абстрактный
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(13): message : см. объявление "Shape::getPerimeter"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(224,20): error C2259: "Sphere": невозможно создать экземпляр абстрактного класса
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(121): message : см. объявление "Sphere"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(224,20): message : из-за следующих членов:
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(224,20): message : double Shape::getPerimeter(void): абстрактный
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(13): message : см. объявление "Shape::getPerimeter"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(224,26): error C2259: "Sphere": невозможно создать экземпляр абстрактного класса
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(121): message : см. объявление "Sphere"
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(224,26): message : из-за следующих членов:
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(224,26): message : double Shape::getPerimeter(void): абстрактный
+C:\Users\DELL\source\repos\OOP_LR\LR_5_Shapes\Shapes\Shapes.cpp(13): message : см. объявление "Shape::getPerimeter"
