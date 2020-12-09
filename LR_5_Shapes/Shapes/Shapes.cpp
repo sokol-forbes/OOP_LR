@@ -3,191 +3,184 @@
 
 #include <iostream>
 #include <math.h>
-const double PI = 3.141592653589793238463;
-class Shape
-{
+#include <windows.h>
+
+using namespace std;
+const double PI = 3.141592;
+
+class Figure {
 public:
-    
-    virtual void print() = 0;
-    virtual double getSquare() = 0;
-    virtual double getPerimeter() = 0;
-    virtual double getVolume() = 0;
+    virtual void print();
+
+    virtual double getSquare();
+
+    virtual double getPerimeter();
+
+    virtual double getVolume();
+
+
 };
 
-class TwoDShape : public Shape
-{
-    virtual double getSquare() = 0; 
-    virtual double getPerimeter() = 0;
-    double getVolume() { return 0; }
+class TwoDFigure : public Figure {
+
 };
 
-class ThreeDShape : public Shape
-{
-    virtual double getSquare() = 0;
-    virtual double getVolume() = 0;
-    double getPerimetr()  { return 2.1; }
+
+class ThreeDFigure : public Figure {
+
+
 };
 
-class Rectangle : public TwoDShape
-{
+class Parallelepiped : public ThreeDFigure {
+    double width, longg, height;
+public:
+    Parallelepiped(double h, double l, double w) : height(h), longg(l), width(w) {}
+
+    Parallelepiped() {
+        width = height = longg = 1.1;
+    }
+
+    double getSquare() override {
+        return 2 * width * longg + 2 * height * longg + 2 * height * width;
+    }
+
+    double getVolume() override {
+        return width * longg * height;
+    }
+
+    void print() {
+        std::cout << "Parallelepiped" << std::endl;
+    }
+};
+
+class Sphere : public ThreeDFigure {
+    double radius;
+public:
+    Sphere(double r) : radius(r) {}
+
+    Sphere() {
+        radius = 1.1;
+    }
+
+    double getSquare() override {
+        return 4 * radius * radius * PI;
+    }
+
+    double getVolume() override {
+        return 4 / 3 * radius * radius * radius * PI;
+    }
+
+    void print() {
+        std::cout << "Sphere" << std::endl;
+    }
+
+};
+
+
+class Rectangle : public TwoDFigure {
     double height, width;
-
 public:
     Rectangle(double w, double h) : width(w), height(h) {}
-    Rectangle()
-    {
+
+    Rectangle() {
         width = 1.1;
         height = 1.2;
     }
-    double getSquare() override
-    {
+
+    double getSquare() override {
         return width * height;
     }
 
-    double getPerimeter() override
-    {
+    double getPerimeter() override {
         return width * 2 + height * 2;
     }
-    
-    void print()
-    {
+
+    void print() {
         std::cout << "Rectangle" << std::endl;
     }
+
 };
-class Treeangle : public TwoDShape
-{
-    double  side1, side2, side3;
+
+class Treeangle : public TwoDFigure {
+    double side1, side2, side3;
 public:
-    Treeangle(double s1, double s2, double s3): side1(s1), side2(s2), side3(s3) {}
-    Treeangle ()
-    {
-        side1=1.2;
+    Treeangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
+
+    Treeangle() {
+        side1 = 1.2;
         side2 = 1.3;
         side3 = 1.3;
     }
-    double getSquare() override
-    {
-        return sqrt(getPerimeter() / 2 * (getPerimeter() / 2 - side1) * (getPerimeter() / 2 - side2) * (getPerimeter() / 2 - side3));
+
+    double getSquare() override {
+        return sqrt(getPerimeter() / 2 * (getPerimeter() / 2 - side1) * (getPerimeter() / 2 - side2) *
+                    (getPerimeter() / 2 - side3));
     }
 
-    double getSquare(double s1, double s2, double s3)
-    {
+    double getSquare(double s1, double s2, double s3) {
         double perimetr = s1 + s2 + s3;
         return sqrt(perimetr / 2 * (perimetr / 2 - s1) * (perimetr / 2 - s2) * (perimetr / 2 - s3));
     }
-    double getPerimeter() override
-    {
-        return side1+side2+side3;
+
+    double getPerimeter() override {
+        return side1 + side2 + side3;
     }
-    void print()
-    {
+
+    void print() {
         std::cout << "Treeangle" << std::endl;
     }
 };
-class Circle : public TwoDShape
-{
+
+class Circle : public TwoDFigure {
     double radius;
 public:
     Circle(double r) : radius(r) {}
-    Circle()
-    {
+
+    Circle() {
         radius = 1.1;
     }
-    double getSquare() override
-    {
-        
+
+    double getSquare() override {
+
         return radius * radius * PI;
     }
 
-    double getPerimeter() override
-    {
-        return 2*PI*radius;
+    double getPerimeter() override {
+        return 2 * PI * radius;
     }
-    void print()
-    {
+
+    void print() {
         std::cout << "Circle" << std::endl;
     }
 };
 
-
-
-class Parallelepiped : public  ThreeDShape
-{
-    double width, longg, height;
-public:
-    Parallelepiped(double h, double l, double w) : height(h), longg(l), width(w) {}
-    Parallelepiped()
-    {
-        width = height = longg = 1.1;
-    }
-    double getSquare() override
-    {
-      return  2 * width * longg + 2 * height * longg + 2 * height * width;
-    }
-
-    double getVolume() override
-    {
-        return width * longg * height;
-    }
-
-    void print()
-    {
-        std::cout << "Parallelepiped" << std::endl;
-    }
-};
-class Sphere : public ThreeDShape
-{
-    double radius;
-public:
-    Sphere(double r): radius(r){}
-    Sphere()
-    {
-        radius = 1.1;
-    }
-    double getSquare() override
-    {
-        return 4* radius * radius * PI;
-    }
-
-    double getVolume() override
-    {
-        return 4/3 * radius * radius * radius * PI;
-    }
-
-    void print()
-    {
-        std::cout << "Sphere" << std::endl;
-    }
-
- };
-
-class Piramid : public ThreeDShape, public Treeangle
-{
-    double side1, side2, side3,side4, side5, side6;
+class Piramid : public ThreeDFigure, public Treeangle {
+    double side1, side2, side3, side4, side5, side6;
 public:
     Piramid(double s1, double s2, double s3, double s4, double s5, double s6)
-        : Treeangle(s1,s2,s3), side4(s4), side5(s5) , side6(s6) {}
-    Piramid()
-    {
+            : Treeangle(s1, s2, s3), side4(s4), side5(s5), side6(s6) {}
+
+    Piramid() {
         side1 = side2 = side3 = side4 = side5 = side6 = 1.8;
     }
-    double getSquare() override
-    {
-        return Treeangle:: getSquare(side4,side5,side1)+ Treeangle::getSquare(side2, side3, side1) + Treeangle::getSquare(side2, side4, side6) + Treeangle::getSquare(side3, side5, side6);
+
+    double getSquare() override {
+        return Treeangle::getSquare(side4, side5, side1) + Treeangle::getSquare(side2, side3, side1) +
+               Treeangle::getSquare(side2, side4, side6) + Treeangle::getSquare(side3, side5, side6);
     }
 
-    double getVolume() override
-    {
-        return sqrt(side4*side4-
-            (side1 * side2 * side3 / (4 * Treeangle::getSquare(side2, side3, side1))* 
-            (side1 * side2 * side3 / (4 * Treeangle::getSquare(side2, side3, side1)))))/3*Treeangle::getSquare(side2, side3, side1);
+    double getVolume() override {
+        return sqrt(side4 * side4 -
+                    (side1 * side2 * side3 / (4 * Treeangle::getSquare(side2, side3, side1)) *
+                     (side1 * side2 * side3 / (4 * Treeangle::getSquare(side2, side3, side1))))) / 3 *
+               Treeangle::getSquare(side2, side3, side1);
     }
 
-    void print()
-    {
+    void print() {
         std::cout << "Sphere" << std::endl;
     }
 };
+
 int main()
 {
     int choice;
